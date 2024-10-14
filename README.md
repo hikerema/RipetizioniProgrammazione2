@@ -18,12 +18,10 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 * Input via ARGS e STDIN, Output via STDOUT
 * Array e ArrayList
 
-### Lezione 2: Domande su arraylist e sintassi Java
-**Data** 10/10/2024 (1 ora)
-* Aiuti esericizi
-
-### Lezione 3: Specifiche, Astrazione procedurale ed Eccezioni
+### Lezione 2: Specifiche, Astrazione procedurale ed Eccezioni + domande su esercizi precedenti
+> ⚠️ **Attenzione!** si ricorda che si terrà in celoria 20, piano 4
 **Data** 15/10/2024 (3 ore)
+* Correzione e domande su esercizi precedenti
 * Imparare la differenza tra procedura parziale e totale
 * Imparare a specificare il codice, usando la javadoc liskov (REQUIRES, MODIFIES, EFFETC)
 * Creare nuove eccezioni che estentono Exception e RuntimeException, comprendendo la differenza
