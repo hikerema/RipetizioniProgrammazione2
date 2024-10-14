@@ -19,7 +19,6 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 * Array e ArrayList
 
 ### Lezione 2: Specifiche, Astrazione procedurale ed Eccezioni + domande su esercizi precedenti
-> ⚠️ **Attenzione!** si ricorda che si terrà in celoria 20, piano 4 \n
 **Data** 15/10/2024 (3 ore)
 * Correzione e domande su esercizi precedenti
 * Imparare la differenza tra procedura parziale e totale
