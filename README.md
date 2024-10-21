@@ -25,6 +25,11 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 * Imparare a specificare il codice, usando la javadoc liskov (REQUIRES, MODIFIES, EFFETC)
 * Creare nuove eccezioni che estentono Exception e RuntimeException, comprendendo la differenza
 
+### Lezione 3: Domande sui laboratori 2 e 3 fatti a lezione di ripetizione 2 e a lezione di laboratorio 3
+**Data** 22/10/2024 (3 ore) 
+* Correzione e debugging esercizio "Ricevimento" del laboratorio 2
+* Domande spontanee sul laboratorio 3
+
 ## Come Utilizzare Questa Repository
 
 1. **Clona la repository** sul tuo computer utilizzando il comando:
