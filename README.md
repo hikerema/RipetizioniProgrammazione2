@@ -26,9 +26,13 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 * Creare nuove eccezioni che estentono Exception e RuntimeException, comprendendo la differenza
 
 ### Lezione 3: Domande sui laboratori 2 e 3 fatti a lezione di ripetizione 2 e a lezione di laboratorio 3
-**Data** 22/10/2024 (3 ore) 
+**Data** 22/10/2024 (2 ore) 
 * Correzione e debugging esercizio "Ricevimento" del laboratorio 2
 * Domande spontanee sul laboratorio 3
+
+### Lezione 4: Lab3
+**Data** 24/10/2024 (2 ore) 
+
 
 ## Come Utilizzare Questa Repository
 
