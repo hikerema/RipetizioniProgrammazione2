@@ -30,9 +30,17 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 * Correzione e debugging esercizio "Ricevimento" del laboratorio 2
 * Domande spontanee sul laboratorio 3
 
-### Lezione 4: Lab3
-**Data** 24/10/2024 (2 ore) 
+### Lezione 4: Esercizi sul cloning (Laboratorio 3)
+**Data** 24/10/2024 (2 ore)
 
+### Lezione 5: Esercizi sul laboratorio 4
+**Data** 31/10/2024 (2 ore)
+
+### Lezione 6: Esercizi sul laboratorio 5
+**Data** 5/11/2024 (3 ore)
+
+### Lezione 7: Come prepararsi al esame? 
+**Data** 6/11/2024 (3 ore)
 
 ## Come Utilizzare Questa Repository
 
