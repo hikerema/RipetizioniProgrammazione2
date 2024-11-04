@@ -33,7 +33,7 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 ### Lezione 4: Esercizi sul cloning (Laboratorio 3)
 **Data** 24/10/2024 (2 ore)
 
-### Lezione 5: Esercizi sul laboratorio 4
+### Lezione 5: Esercizi sul invariante di rappresentazione
 **Data** 31/10/2024 (2 ore)
 
 ### Lezione 6: Esercizi sul laboratorio 5
