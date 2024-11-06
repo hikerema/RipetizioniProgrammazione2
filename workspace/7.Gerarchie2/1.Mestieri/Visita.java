@@ -17,38 +17,39 @@ public class Visita {
     }
 
     public static void main(String[] args) {
-        System.out.println("Inserisci medici nel formato `nome specializzazione parcella` (termina con CTRL+D)");
+        System.out.println("Inserisci medici nel formato `nome specializzazione parcella` (termina con linea vuota)"); //cambiato il messaggio per descrivere all'utente come si interrompe l'inserimento
         ArrayList<Dottore> medici = new ArrayList<Dottore>();
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
+            if (line.isEmpty()) break; // se la riga è vuota termina l'inserimento ed esce dal ciclo
             String[] valori = line.split(" ");
             Dottore medico = new Dottore(valori[0], valori[1], Double.parseDouble(valori[2]));
             medici.add(medico);
         }
-        scanner.close();
+        //scanner.close(); lo chiudo alla fine del programma
 
-        System.out.println("Inserisci i pazienti nel formato `nome codice` (termina con CTRL+D)");
+        System.out.println("Inserisci i pazienti nel formato `nome codice` (termina con linea vuota)");
         ArrayList<Paziente> pazienti = new ArrayList<Paziente>();
-        Scanner scanner1 = new Scanner(System.in);
-        while (scanner1.hasNextLine()) {
-            String line = scanner1.nextLine();
+        //Scanner scanner1 = new Scanner(System.in); ho deciso di optare per una soluzione che usa un solo scanner
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            if (line.isEmpty()) break; // se la riga è vuota termina l'inserimento ed esce dal ciclo
             String[] valori = line.split(" ");
             Paziente paziente = new Paziente(valori[0], valori[1]);
             pazienti.add(paziente);
         }
-        scanner1.close();
 
-        System.out.println("Inserisci visite nel formato `nomeDottore codicePaziente` (termina con CTRL+D)");
+        System.out.println("Inserisci visite nel formato `nomeDottore codicePaziente` (termina con linea vuota)");
         ArrayList<Visita> visite = new ArrayList<Visita>();
-        Scanner scanner2 = new Scanner(System.in);
-        while (scanner2.hasNextLine()) {
-            String line = scanner2.nextLine();
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            if (line.isEmpty()) break; // se la riga è vuota termina l'inserimento ed esce dal ciclo
             String[] valori = line.split(" ");
             Visita visita = new Visita(valori[0], valori[1]);
             visite.add(visita);
         }
-        scanner2.close();
+        scanner.close();
 
         HashMap<String, Integer> map = new HashMap<>();
 
