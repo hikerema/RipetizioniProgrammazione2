@@ -1,3 +1,5 @@
+> Valore attuale del corso: **€. 255,00**
+
 # Ripetizioni di Programmazione 2
 
 Benvenuti nella repository dedicata alle ripetizioni di Programmazione 2!
