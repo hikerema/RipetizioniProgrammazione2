@@ -37,10 +37,15 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 **Data** 31/10/2024 (2 ore)
 
 ### Lezione 6: Esercizi su gerarchie di tipi
-**Data** 5/11/2024 (3 ore)
+**Data** 5/11/2024 (2 ore)
+* svolto esercizio solido
 
-### Lezione 7: Come prepararsi al esame? 
+### Lezione 7: Esercizi su gerarchie di tipi
 **Data** 6/11/2024 (3 ore)
+* svolto erescizio Mestieri
+
+### Lezione 8: Affrontare l'esame di prgrammazione 2
+**Data** 12/11/2024 (3 ore)
 
 ## Come Utilizzare Questa Repository
 
