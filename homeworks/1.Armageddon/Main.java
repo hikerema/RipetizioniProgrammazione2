@@ -17,7 +17,6 @@ public class Main {
             String[] line = scanner.nextLine().split(" ");
             double massa = Double.parseDouble(line[0]);
             double distanza = Double.parseDouble(line[1]);
-            System.out.println("stampa " + massa);
             try {
                 Asteroide asteroide = new Asteroide(massa, distanza);
                 asteroidi.add(asteroide);
@@ -28,7 +27,7 @@ public class Main {
         scanner.close();
         for (Asteroide a : asteroidi) {
             if (a.forzaGravitazionale() > soglia)
-                System.out.println("Asteroide pericoloso a distanza " + a.getDistanza() + " del peso di " + a.getMassa());
+                System.out.println("Asteroide pericoloso a distanza " + a.getDistanza() + " km del peso di " + a.getMassa() + " kg");
         }
     }
 }

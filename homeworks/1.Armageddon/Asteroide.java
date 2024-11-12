@@ -7,12 +7,10 @@ public class Asteroide {
     public Asteroide(double massa, double distanza) throws IllegalAsteroideException {
     //EFFECTS: throw IllegalAsteroideException quando massa <= 0
     //         throw IllegalAsteroideException quando distanza < 0
-        if (this.massa <= 0) {
-            System.out.println(this.massa);
+        if (massa <= 0) {
             throw new IllegalAsteroideException("Errore nella massa");
         }
-        if (this.distanza < 0) {
-            
+        if (distanza < 0) {
             throw new IllegalAsteroideException("Errore nella distanza");
         }
         this.massa = massa;
