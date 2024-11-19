@@ -7,7 +7,7 @@ Scrivere un metodo `main()` per verificare la definizione della classe che legga
 #### Esempio d'esecuzione:
 
 ```text
-$ java Dipendente 2374
+$ java Visita
 Inserisci medici nel formato `nome specializzazione parcella` (termina con CTRL+D)
 Dr.Strange Chirurgia 300
 Dr.Who Geriatria 150
