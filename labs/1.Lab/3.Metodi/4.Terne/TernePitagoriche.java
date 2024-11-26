@@ -5,7 +5,7 @@ public class TernePitagoriche {
 	}
 
 	public static void main(String[] args) {
-		int soglia = Integer.valueOf(args[0]);
+		int soglia = Integer.parseInt(args[0]);
 
 		for (int a = 1; a < soglia; a++)
 			for (int b = a; b < soglia; b++)
