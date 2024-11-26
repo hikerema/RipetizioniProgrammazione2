@@ -1,5 +1,3 @@
-> Valore attuale del corso: **€. 255,00**
-
 # Ripetizioni di Programmazione 2
 
 Benvenuti nella repository dedicata alle ripetizioni di Programmazione 2!
@@ -46,8 +44,12 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 **Data** 6/11/2024 (3 ore)
 * svolto erescizio Mestieri
 
-### Lezione 8: Affrontare l'esame di prgrammazione 2
-**Data** 12/11/2024 (3 ore)
+### Lezione 8: Iteratori
+**Data** 12/11/2024 (5 ore)
+
+### Lezione 9: Preparazione all'esame
+**Data** 26/11/2024 (3 ore)
+- una simulazione a scelta dello studente
 
 ## Come Utilizzare Questa Repository
 
