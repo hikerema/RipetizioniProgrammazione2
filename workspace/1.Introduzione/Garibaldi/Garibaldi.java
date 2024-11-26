@@ -13,7 +13,7 @@ public class Garibaldi {
             testo.append(scanner.nextLine()).append("\n");
         }
         scanner.close();
-        System.out.println(Vocali(testo.toString()));
+        System.out.println((String)Vocali(testo.toString()));
   
     }
     public static String Vocali(String testo) {
