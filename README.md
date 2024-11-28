@@ -60,3 +60,5 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 1. **Clona la repository** sul tuo computer utilizzando il comando:
    ```bash
    git clone https://github.com/hikerema/RipetizioniProgrammazione2
+
+> Il vaore monetario di questo corso è di **€. 420,00**
