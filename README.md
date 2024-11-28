@@ -8,7 +8,7 @@ Le ripetizioni di programmazione 2 sono riferite al omonimo insegnamento Unimi, 
 
 ## Indice delle Lezioni
 Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giustificata ad una lezione preclude l'annullamento di tutto il corso e il materiale caricato.
-> ⚠️ **Attenzione!** La lezione di Martedì 3 dicembre è spostata al 5 dicembre.
+> ⚠️ **Attenzione!** La lezione di Martedì 3 dicembre è spostata al 4 dicembre.
 
 ### Lezione 1: Introduzione alla sintassi Java
 **Data**: 03/10/2024 (3 ore)
