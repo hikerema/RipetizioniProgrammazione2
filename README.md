@@ -47,9 +47,13 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
 ### Lezione 8: Iteratori
 **Data** 12/11/2024 (5 ore)
 
-### Lezione 9: Preparazione all'esame
+### Lezione 9: Ripasso su ArrayList
 **Data** 26/11/2024 (3 ore)
-- una simulazione a scelta dello studente
+- esercizzi scelti dallo studente
+
+### Lezione 10: In preparazione all'esame
+**Data** 4/12/2024 (3 ore)
+- creaiamo una vetreria
 
 ## Come Utilizzare Questa Repository
 
