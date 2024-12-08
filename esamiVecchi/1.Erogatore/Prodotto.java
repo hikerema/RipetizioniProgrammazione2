@@ -1,4 +1,4 @@
-public abstract class Prodotto implements Comparable<Prodotto>{
+public class Prodotto implements Comparable<Prodotto>, Cloneable {
 //OVERVIEW: un Prodotto è definito da un nome e dal suo prezzo
 
 //attributes
@@ -23,13 +23,11 @@ public abstract class Prodotto implements Comparable<Prodotto>{
         
         this.nome = nome;
         this.prezzo = prezzo;
+
+        assert repOk();
     }
 
 //methods
-    public String getNome() {
-    //EFFECTS: restituisce il nome del prodotto
-        return this.nome;
-    }
 
     public double getPrezzo() {
     //EFFECTS: restituisce il prezzo del prodotto
@@ -52,11 +50,46 @@ public abstract class Prodotto implements Comparable<Prodotto>{
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+        if(!(obj instanceof Prodotto))
+			return false;
+
+		return ((Prodotto) obj).nome.equals(this.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.nome.hashCode();
+    }
+
+    @Override
+    protected Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
+    
+    @Override
     public String toString() {
         return "Prodotto: " + this.nome + " prezzo: " + this.prezzo;
     }
 
-    
+    public boolean repOk() {
+        if(nome ==  null)
+            return false;
+        
+        if(nome.equals(""))
+            return false;
+        
+        if(prezzo <= 0)
+            return false;    
+        
+        return true;
+    }
     
 
 }

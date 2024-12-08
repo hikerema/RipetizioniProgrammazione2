@@ -2,7 +2,7 @@ public class ProdottoControllato extends Prodotto {
 //OVERVIEW: un ProdottoControllato definisce un'età minima per vendere i prodotti
 
 //attributes
-    public int etaMin;
+    public final int etaMin;
 
 //constuctors
     public ProdottoControllato(String nome, double prezzo, int etaMin) throws IllegalArgumentException{
@@ -18,10 +18,9 @@ public class ProdottoControllato extends Prodotto {
     }
 
 //methods
-
     @Override
     public String toString() {
-        return super.toString() + " età minima: " + this.etaMin + " anni";
+        return super.toString() + " età minima: " + etaMin + " anni";
     }
 
 }
