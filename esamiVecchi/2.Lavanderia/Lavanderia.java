@@ -2,80 +2,152 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Lavanderia implements Iterable<Macchina>{
-//OVERVIEW: Lavanderia contiene diverse Macchine e tiene traccia del credito inserito
+public class Lavanderia implements Iterable<Macchina> {
+//OVERVIEW: contiene una insieme di Macchina (lavatrici o asciugatrici)
 
 //attributes
-    public double creditoTot = 0;
-    ArrayList<Macchina> macchine = new ArrayList<>();
+    private double credito = 0;
+    private ArrayList<Macchina> lav = new ArrayList<>();
 
 //methods
-    public double addCredito(double credito) throws IllegalArgumentException{
+    public double addCredito(double credito) throws IllegalArgumentException {
     //MODIFIES: this
-    //EFFECTS: aggiunge credito a credito totale
+    //EFFECTS: restituisce this incrementato di credito
     //         se credito <= 0 lancia IllegalArgumentException
         if(credito <= 0)
-            throw new IllegalArgumentException("Credito non valido");
+            throw new IllegalArgumentException("credito <= 0");
         
-        return this.creditoTot + credito;
+        this.credito += credito;
+        assert repOk();
+
+        return this.credito;
     }
 
-    public int installa(Macchina m) throws NoSuchElementException{
+    public int install(Macchina m) throws NoSuchElementException {
     //MODIFIES: this
-    //EFFECTS: installa una nuova macchina m
-    //         se m null lancia NoSuchElementExcpetion
+    //EFFECTS: installa una macchina in lavanderia
+    //         restituisce un identificatore della macchina (int)
+    //         se macchina null lancia NoSuchElementException
         if(m == null)
             throw new NoSuchElementException("macchina null");
         
-        macchine.add((Macchina)m.clone());
-        return macchine.indexOf(m);
+        lav.add(m);
+        assert repOk();
+        return lav.indexOf(m);
+        
     }
 
-    public void rimuovi(int id) throws IllegalArgumentException {
+    public void remove(int id) throws IllegalArgumentException, IndexOutOfBoundsException {
     //MODIFIES: this
-    //EFFECT: rimuove id da macchine
-    //        se id <= 0 lancia IllegalArgumentException
-
+    //EFFECTS: rimuove la macchina id da lav
+    //         se id < 0 lancia IllegalArgumentException
+    //         se id non presente in lav lancia IndexOutOfBoundsException
         if(id < 0)
-            throw new IllegalArgumentException("id <= 0");
-        
-        macchine.remove(id);
+            throw new IllegalArgumentException("id < 0");
+        if(id > lav.size()-1)
+            throw new IndexOutOfBoundsException("id non presente");
+
+        lav.remove(id);
+        assert repOk();
     }
 
-    public double lava(int id) throws IllegalArgumentException, UnsupportedOperationException, CreditException {
-    //MODIFIES: credito
+    public double lava(int id) throws IllegalArgumentException, IndexOutOfBoundsException, LockException, CreditException, UnsupportedOperationException {
+    //MODIFIES: this
+    //EFFECTS: avvia lavatrice, chiudendola e scalando il credito
+    //         se id invalido lancia IndexOutOfBoundsException
+    //         se macchina non è lavatrice lancia UnsupportedOperationException
+    //         se credito non sufficiente lancia CreditException
+   
         if(id < 0)
-            throw new IllegalArgumentException("id <= 0");
-        
-        if(macchine.get(id).getClass() != Lavatrice.class)
-            throw new UnsupportedOperationException("non è una lavatrice");
-        Lavatrice m = (Lavatrice)macchine.get(id);
-        if(m.costo > creditoTot)
-            throw new CreditException("credito insufficiente");
-        
-        m.locked();
-        return creditoTot -= m.costo;
+            throw new IllegalArgumentException("\tid < 0");
+        else if(id > lav.size()-1)
+            throw new IndexOutOfBoundsException("\tid non presente");
 
+        else if(lav.get(id).getClass() != Lavatrice.class)
+            throw new UnsupportedOperationException("\tnon è una lavatrice");
+        
+        else if(lav.get(id).costo > this.credito) {
+            System.out.println("costo: " + lav.get(id).costo + "credito: " + this.credito);
+            throw new CreditException("\tcredito insufficiente");
+        }
+        
+        this.credito -= lav.get(id).costo;
+        //lav.get(id).lock();
+        
+        return this.credito;  
     }
 
-    public double asciuga(int id) throws IllegalArgumentException, UnsupportedOperationException, CreditException {
-    //MODIFIES: credito
-        if(id < 0)
-            throw new IllegalArgumentException("id <= 0");
-            
-        if(macchine.get(id).getClass() != Lavatrice.class)
-            throw new UnsupportedOperationException("non è un'asciugatrice");
-        Asciugatrice m = (Asciugatrice)macchine.get(id);
-        if(m.costo > creditoTot)
-            throw new CreditException("credito insufficiente");
-        
-        m.locked();
-        return creditoTot -= m.costo;
+    public double asciuga(int id) throws IllegalArgumentException, IndexOutOfBoundsException, LockException, CreditException, UnsupportedOperationException {
+        //MODIFIES: this
+        //EFFECTS: avvia asciugatrice, chiudendola e scalando il credito
+        //         se id invalido lancia IndexOutOfBoundsException
+        //         se macchina non è asciugatrice lancia UnsupportedOperationException
+        //         se credito non sufficiente lancia CreditException
+       
+            if(id < 0)
+                throw new IllegalArgumentException("\tid < 0");
+            if(id > lav.size()-1)
+                throw new IndexOutOfBoundsException("\tid non presente");
     
+            if(lav.get(id).getClass() != Asciugatrice.class)
+                throw new UnsupportedOperationException("\tnon è una asciugatrice");
+            
+            if(lav.get(id).costo > this.credito)
+                throw new CreditException("\tcredito insufficiente");
+            
+        this.credito -= lav.get(id).costo;
+        lav.get(id).lock();
+            
+        return this.credito;  
+    }
+
+    public void open(int id) throws IllegalArgumentException, IndexOutOfBoundsException, LockException {
+    //MODIFIES: this
+    //EFFECTS: apre la macchina id
+    //         se id invalido lancia IndexOutOfBoundsException
+        if(id < 0)
+            throw new IllegalArgumentException("id < 0");
+        if(id > lav.size()-1)
+            throw new IndexOutOfBoundsException("id non presente");
+
+        lav.get(id).unlock();
+
     }
 
     @Override
     public Iterator<Macchina> iterator() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new Iterator<Macchina>() {
+            Iterator<Macchina> i = lav.iterator();
+
+            @Override
+            public boolean hasNext() {
+                return i.hasNext();
+            }
+
+            @Override
+            public Macchina next() {
+                return i.next();
+            }
+        };
+    }
+
+    @Override
+    public String toString() {
+        String ret = "\tLavanderia -> credito: " + this.credito + " macchine:\n";
+        for (Macchina macchina : lav) {
+            ret += "\t" + macchina.toString() + "\n";
+        }
+        return ret;
+    }
+
+    public boolean repOk() {
+        if(credito <= 0)
+            return false;
+
+        for (Macchina m : lav) {
+            if(m == null)
+                return false;
+        }
+        return true;
     }
 }

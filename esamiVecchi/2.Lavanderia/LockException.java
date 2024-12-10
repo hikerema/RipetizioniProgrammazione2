@@ -1,4 +1,4 @@
-public class LockException extends RuntimeException{
+public class LockException extends RuntimeException {
     public LockException() {
         super();
     }

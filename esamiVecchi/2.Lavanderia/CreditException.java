@@ -1,4 +1,4 @@
-public class CreditException extends Exception{
+public class CreditException extends Exception {
     public CreditException() {
         super();
     }

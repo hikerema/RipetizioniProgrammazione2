@@ -1,60 +1,63 @@
-public class Macchina {
-//OVERVIEW: modella Macchina il cui stato può essere aperta o chiusa
+public abstract class Macchina implements Comparable<Macchina>{
+//OVERVIEW: modella Macchina astratta
 
 //attributes
-    public boolean lock = false;
-    public double costo = 0;
+    public final double costo;
+    private boolean stato = false; //false = chiuso
 
-//constructors
+//costructors
     public Macchina(double costo) throws IllegalArgumentException {
     //MODIFIES: this
-    //EFFECTS: inizializzo lo stato della Macchina
-    //         se credito <= 0 lancia IllegalArgumentException
+    //EFFECTS: inizializza this
+    //         se costo <= 0 lancia IllegalArgumentException
         if(costo <= 0)
-            throw new IllegalArgumentException("credito <= 0");
-
-        assert repOk();
+            throw new IllegalArgumentException("\tcosto <= 0");
         this.costo = costo;
-
     }
 
 //methods
-    public void verificaStato() throws LockException{
-    //EFFECTS: verifica lo stato della macchina
-    //         se stato è già close lancia LockException
-    
-        if(lock = locked())
-            throw new LockException("macchina già chiusa");
+    public void lock() throws LockException {
+    //MODIFIES: this
+    //EFFECTS: this.stato == false (chiuso)
+    //         se this.stato è già false lancia LockException
+        if(this.stato == false)
+            throw new LockException("\tgià chiusa");
         
-        lock = !locked();
+        this.stato = false;
 
     }
 
-    public boolean locked() {
-    //EFFECTS: stato viene inizializzato a true (open)
-        return lock = true;
+    public void unlock() throws LockException {
+    //MODIFIES: this
+    //EFFECTS: this.stato == true (aperto)
+    //         se this.stato è già true lancia LockException
+        if(this.stato == true)
+            throw new LockException("\tgià aperta");
+            
+        this.stato = true;
+    
+    }
+    
+    public boolean verificaStato() {
+    //EFFECTS: restituisce lo stato della macchina
+        return this.stato;    
+    }
+
+    @Override
+    public int compareTo(Macchina m) {
+        if(this.costo > m.costo)
+            return 1;
+        else if(this.costo < m.costo)
+            return -1;
+        
+        return 0;
     }
 
     @Override
     public String toString() {
-        if(locked())
-            return "chiusa";
-        return "aperta";
-    }
-
-    @Override
-    protected Object clone() {
-        try {
-            return super.clone();
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
-    }
-
-
-    private boolean repOk() {
-        if(costo <= 0)
-            return false;
-        return true;
+        if(this.stato == true)
+            return " costo: " + this.costo + " aperta";
+        else
+            return " costo: " + this.costo + " chiusa";
     }
 }
