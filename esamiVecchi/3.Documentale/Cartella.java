@@ -24,7 +24,7 @@ public class Cartella extends Contenuto implements Iterable<Contenuto> {
         
         assert repOk();
         this.cartellaSup = cartellaSup;
-        this.sottoCartelle = new ArrayList<>();;
+        this.sottoCartelle = new ArrayList<>();
     }
 
 //methods
@@ -61,7 +61,6 @@ public class Cartella extends Contenuto implements Iterable<Contenuto> {
         throw new NoSuchElementException("nome non trovato");
     }
 
-//SBAGLIATO
     public void aggiungi(Contenuto c) throws ElementExistsException {
     //MODIFIES: this
     //EFFECTS: aggiunge un nuovo contenuto alla cartella
