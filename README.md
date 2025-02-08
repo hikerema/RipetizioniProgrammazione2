@@ -61,4 +61,4 @@ Le lezioni si terranno ogni Martedì dalle 9:00 alle 12:00, l'assenza non giusti
    ```bash
    git clone https://github.com/hikerema/RipetizioniProgrammazione2
 
-> Il vaore monetario di questo corso è di **€. 420,00**
+> Il vaore monetario di questo corso è di **€. 420,00**, ma è stato dispensato gratuitamente.
